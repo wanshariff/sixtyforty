@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
+import DiagnosisForm from './DiagnosisForm';
 import { motion } from 'framer-motion';
 import { 
   ArrowRight, 
+  BookOpen,
   LayoutGrid, 
   Activity, 
   Users, 
@@ -80,9 +82,9 @@ export default function App() {
             <button className="bg-primary-600 hover:bg-primary-700 text-white px-8 py-4 font-semibold text-lg flex items-center justify-center gap-2 transition-all rounded-2xl shadow-lg shadow-primary-600/20">
               Schedule Discovery <ArrowRight size={20} />
             </button>
-            <button className="bg-zinc-900 border border-zinc-800 hover:border-zinc-700 hover:bg-zinc-950 text-zinc-50 px-8 py-4 font-semibold text-lg flex items-center justify-center gap-2 transition-all rounded-2xl shadow-sm">
-              See Our Case Studies
-            </button>
+            <a href="#work" className="bg-zinc-900 border border-zinc-800 hover:border-zinc-700 hover:bg-zinc-950 text-zinc-50 px-8 py-4 font-semibold text-lg flex items-center justify-center gap-2 transition-all rounded-2xl shadow-sm">
+              See Our Work
+            </a>
           </div>
           
           {/* Logo Band */}
@@ -230,7 +232,8 @@ export default function App() {
               </div>
               <div className="mb-8 pb-8 border-b border-zinc-800">
                 <div className="text-3xl font-bold tracking-tight mb-1 text-zinc-50">RM 20k - 35k+</div>
-                <div className="text-zinc-400 text-sm font-medium">Monthly + 2-5% Rev Share</div>
+                <div className="text-zinc-400 text-sm font-medium">Monthly + 2-5% Rev Share*</div>
+                <div className="text-zinc-500 text-xs mt-1">*Applied strictly to net-new revenue generated directly from our deployed infrastructure.</div>
               </div>
               <ul className="space-y-4 mb-8 flex-grow">
                 {['Integrated Fractional "Growth Pod"', 'End-to-End Campaign Architecture', 'Continuous Custom Feature Rollouts', 'Advanced Behavioral Analytics'].map((feature, i) => (
@@ -273,7 +276,7 @@ export default function App() {
               </div>
               <div className="p-8">
                 <h4 className="text-2xl font-bold text-zinc-50 mb-2">E-Commerce Conversion Overhaul</h4>
-                <p className="text-zinc-400 mb-6">A complete breakdown and rebuild of a leaking sales funnel for a mid-market retailer.</p>
+                <p className="text-zinc-400 mb-6">A complete breakdown and rebuild of a leaking sales funnel for a mid-market retailer. A frictionless UX design combined with a targeted micro-KOL campaign lowered CAC.</p>
                 <div className="flex gap-4">
                   <div className="bg-zinc-950 px-4 py-2 rounded-xl border border-zinc-800"><div className="text-primary-500 font-bold">+142%</div><div className="text-xs text-zinc-500 uppercase tracking-wider">CVR</div></div>
                   <div className="bg-zinc-950 px-4 py-2 rounded-xl border border-zinc-800"><div className="text-primary-500 font-bold">-35%</div><div className="text-xs text-zinc-500 uppercase tracking-wider">CAC</div></div>
@@ -320,7 +323,7 @@ export default function App() {
               </h2>
               <h3 className="text-4xl md:text-5xl font-bold tracking-tight mb-6">The 40% Sprint.</h3>
               <p className="text-primary-950/90 text-lg mb-6 leading-relaxed font-medium">
-                Need immediate momentum? We deploy our team for a dedicated, high-velocity 14-day sprint to solve isolated growth bottlenecks.
+                Need immediate momentum? We deploy our team for a dedicated, high-velocity 14-day sprint to solve isolated growth bottlenecks. This isn't unadulterated risk—it's calculated asymmetry. While the creative execution is bold, every move is strictly governed by our 60% data framework to protect your brand equity.
               </p>
               <div className="space-y-4 mb-6">
                 <div className="flex items-start gap-3">
@@ -476,6 +479,46 @@ export default function App() {
         </div>
       </motion.section>
 
+      
+      {/* Insights Section */}
+      <motion.section 
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-100px" }}
+        transition={{ duration: 0.7 }} id="insights" className="py-24 px-6 bg-zinc-950 border-b border-zinc-800 relative z-30">
+        <div className="max-w-7xl mx-auto">
+          <div className="mb-16 md:flex justify-between items-end border-b border-zinc-800 pb-8">
+            <div className="max-w-2xl">
+              <h2 className="text-sm font-bold tracking-widest uppercase text-primary-500 mb-3 flex items-center gap-2"><BookOpen size={16} /> Thought Leadership</h2>
+              <h3 className="text-3xl md:text-4xl font-bold tracking-tight text-zinc-50">The Structural Harmony Blog.</h3>
+            </div>
+            <p className="text-zinc-400 max-w-md mt-6 md:mt-0 text-sm md:text-base">
+              The science behind the design. We break down exactly how specific UI choices modify user behavior and drive enterprise growth.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div className="group bg-zinc-900 border border-zinc-800 rounded-3xl p-8 hover:border-primary-500/50 transition-all cursor-pointer">
+              <div className="text-primary-500 text-xs font-bold uppercase tracking-widest mb-4">Behavioral Science</div>
+              <h4 className="text-2xl font-bold text-zinc-50 mb-4 group-hover:text-primary-500 transition-colors">How Gestalt Principles Directly Increase Checkout Completion Rates</h4>
+              <p className="text-zinc-400 mb-6 line-clamp-3 leading-relaxed">Applying the principles of proximity, similarity, and closure to eliminate cognitive friction at the point of sale. See why a unified visual structure transforms hesitant browsers into confident buyers.</p>
+              <div className="flex items-center gap-2 text-sm font-bold text-zinc-50 group-hover:text-primary-500 transition-colors">
+                Read Deep-Dive <ArrowRight size={16} />
+              </div>
+            </div>
+
+            <div className="group bg-zinc-900 border border-zinc-800 rounded-3xl p-8 hover:border-primary-500/50 transition-all cursor-pointer">
+              <div className="text-primary-500 text-xs font-bold uppercase tracking-widest mb-4">Systems Architecture</div>
+              <h4 className="text-2xl font-bold text-zinc-50 mb-4 group-hover:text-primary-500 transition-colors">The 60/40 Ratio: Why Data Without Emotional Creative Fails</h4>
+              <p className="text-zinc-400 mb-6 line-clamp-3 leading-relaxed">Infrastructure metrics can only take you so far. Explore the analytical necessity of 'wild' creative execution and how to measure the asymmetric ROI of cultural influence.</p>
+              <div className="flex items-center gap-2 text-sm font-bold text-zinc-50 group-hover:text-primary-500 transition-colors">
+                Read Deep-Dive <ArrowRight size={16} />
+              </div>
+            </div>
+          </div>
+        </div>
+      </motion.section>
+
       {/* Diagnostic & Footer */}
       <footer className="bg-zinc-900 border-t border-zinc-800 pt-24 pb-12 px-6">
         <div className="max-w-4xl mx-auto mb-24 bg-zinc-950 border border-zinc-800 rounded-2xl p-8 md:p-12 shadow-sm text-center">
@@ -487,43 +530,7 @@ export default function App() {
             We don't pitch. We diagnose. Fill out the brief below to secure a discovery session. We will identify your current friction points, audit your funnel, and map out a custom growth architecture.
           </p>
           
-          <form className="max-w-md mx-auto space-y-4 text-left">
-            <div>
-              <label className="block text-xs font-bold text-zinc-400 uppercase tracking-wide mb-2">Name</label>
-              <input 
-                type="text" 
-                placeholder="Jane Doe" 
-                className="w-full bg-zinc-900 border border-zinc-700 text-zinc-50 px-4 py-3 rounded-2xl focus:outline-none focus:border-primary-600 focus:ring-1 focus:ring-primary-600 transition-all"
-              />
-            </div>
-            <div>
-              <label className="block text-xs font-bold text-zinc-400 uppercase tracking-wide mb-2">Work Email</label>
-              <input 
-                type="email" 
-                placeholder="jane@yourcompany.com" 
-                className="w-full bg-zinc-900 border border-zinc-700 text-zinc-50 px-4 py-3 rounded-2xl focus:outline-none focus:border-primary-600 focus:ring-1 focus:ring-primary-600 transition-all"
-              />
-            </div>
-            <div>
-              <label className="block text-xs font-bold text-zinc-400 uppercase tracking-wide mb-2">Company Website URL</label>
-              <input 
-                type="url" 
-                placeholder="https://yourcompany.com" 
-                className="w-full bg-zinc-900 border border-zinc-700 text-zinc-50 px-4 py-3 rounded-2xl focus:outline-none focus:border-primary-600 focus:ring-1 focus:ring-primary-600 transition-all"
-              />
-            </div>
-            <div>
-              <label className="block text-xs font-bold text-zinc-400 uppercase tracking-wide mb-2">What is your primary growth bottleneck right now?</label>
-              <select className="w-full bg-zinc-900 border border-zinc-700 text-zinc-50 px-4 py-3 rounded-2xl focus:outline-none focus:border-primary-600 focus:ring-1 focus:ring-primary-600 transition-all appearance-none">
-                <option>UX/Product friction</option>
-                <option>High CAC/Creative fatigue</option>
-                <option>Complete brand/tech overhaul</option>
-              </select>
-            </div>
-            <button type="button" className="w-full bg-primary-600 hover:bg-primary-700 text-white px-8 py-4 mt-2 font-bold text-lg flex items-center justify-center gap-2 transition-all rounded-2xl shadow-md shadow-primary-600/20">
-              Apply for Discovery Session <ChevronRight size={20} />
-            </button>
-          </form>
+          <DiagnosisForm />
         </div>
         
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between pt-8 border-t border-zinc-800 text-sm text-zinc-400">
