@@ -1,11 +1,26 @@
 @import "tailwindcss";
 
 @theme {
+  --color-primary-50: #FFF8EC;
+  --color-primary-100: #FFEFD3;
+  --color-primary-200: #FFDCA5;
+  --color-primary-300: #FFC26D;
+  --color-primary-400: #FF9D32;
+  --color-primary-500: #FF800A;
+  --color-primary-600: #FF6A00;
+  --color-primary-700: #CC4C02;
+  --color-primary-800: #A13C0B;
+  --color-primary-900: #82330C;
+  --color-primary-950: #461704;
   --font-sans: "Inter", "Roboto", ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --font-display: "Bricolage Grotesque", sans-serif;
 }
 
 @layer base {
   html {
     scroll-behavior: smooth;
+  }
+  h1, h2, h3, h4, h5, h6, .text-8xl, .text-7xl, .text-6xl, .text-5xl, .text-4xl, .text-3xl, .text-2xl, .text-xl {
+    font-family: var(--font-display);
   }
 }
